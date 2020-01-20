@@ -1,3 +1,5 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :title, :content, :user
+  attributes :id, :title, :content
+
+  belongs_to :user
 end
