@@ -27,6 +27,13 @@ class UsersController < ApplicationController
 
     end
 
+    def validate
+        if logged_in?
+            render json: @current_user
+        else
+            render json: {errors: ["Whoopsie, something's gong wrong"]}, status: :unauthorized
+        end 
+    end 
 
     private 
     def user_params
